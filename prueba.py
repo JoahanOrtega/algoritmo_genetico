@@ -100,7 +100,7 @@ pob = []
 next_pob = []
 tam_poblacion = 2 ** genes
 
-print("La poblacion inicial sera de", tam_poblacion)
+print("La población inicial será de", tam_poblacion)
 
 while len(pob) < tam_poblacion:
     nueva_persona = generar_numero_aleatorio(9)
@@ -112,9 +112,9 @@ pob = ordenar(pob)
 for per in pob:
     print(
         per,
-        " y es ",
+        " en decimal es: ",
         binario_a_decimal(per),
-        " y su expresion es ",
+        " y el valor de su expresión es ",
         expression(binario_a_decimal(per)),
     )
 
@@ -124,16 +124,16 @@ print("<-- cortar a los -->", partir)
 
 
 
-generaciones = int(input("Cuantas generaciones va a avanzar "))
+generaciones = int(input("¿Cuántas generaciones va a avanzar? "))
 for i in range(generaciones):
     mutacion = random.randint(0, 1)
     print(
-        f"==================================GENERACION {i+1}========================================= {"(Mutacion)" if mutacion==1 else ""}"
+        f"==================================GENERACIÓN {i+1}========================================= {"(Mutación)" if mutacion==1 else ""}"
     )
     next_pob = []
 
     metodo = random.randint(1, 3)
-    print(f"Se va a usar el metodo de cruzamiento {metodo}")
+    print(f"Se va a usar el método de cruzamiento {metodo}")
     if metodo == 1:
         next_pob = mejor_mejor(pob)
     if metodo == 2:
@@ -144,13 +144,13 @@ for i in range(generaciones):
     next_pob = ordenar(next_pob)
 
     if mutacion == 1:
-        print("Poblacion antes de la mutacion")
+        print("Población antes de la mutación")
         for per in next_pob:
             print(
                 per,
-                " y es ",
+                " en decimal es: ",
                 binario_a_decimal(per),
-                " y su expresion esa ",
+                " y el valor de su expresión es ",
                 expression(binario_a_decimal(per)),
             )
         matriz_personas = []
@@ -179,7 +179,7 @@ for i in range(generaciones):
         next_pob=[]
         # print(f"vaciar arreglo {next_pob}")
         next_pob=devolver_vector(matriz_personas)
-        print(f"Poblacion despues de la mutacion")
+        print(f"Población después de la mutación")
 
     next_pob = ordenar(next_pob)
     pob = []
@@ -188,8 +188,8 @@ for i in range(generaciones):
     for per in pob:
         print(
             per,
-            " y es ",
+            " en decimal es: ",
             binario_a_decimal(per),
-            " y su expresion esa ",
+            " y el valor de su expresión es ",
             expression(binario_a_decimal(per)),
         )
